@@ -8,8 +8,6 @@ function TextExpander({ children }) {
     ? children
     : children.split(" ").slice(0, 40).join(" ") + "...";
 
-  if (displayText.length < 8) return <span>{displayText}</span>;
-
   return (
     <span>
       {displayText}

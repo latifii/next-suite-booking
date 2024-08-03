@@ -1,7 +1,11 @@
+import { auth } from "../_core/auth";
+
 export const metadata = {
   title: "acount",
 };
 
-export default function Page() {
-  return <div>Page Account</div>;
+export default async function Page() {
+  const { user } = await auth();
+  const firstName = user?.name.split(" ").at(0);
+  return <div>Welcome {firstName}</div>;
 }
